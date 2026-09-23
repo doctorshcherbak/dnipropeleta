@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="uk"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Копиця — агропелети з побічної сировини</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="%D0%9A%D0%BE%D0%BF%D0%B8%D1%86%D1%8F%20%E2%80%94%20%D0%B0%D0%B3%D1%80%D0%BE%D0%BF%D0%B5%D0%BB%D0%B5%D1%82%D0%B8%20%D0%B7%20%D0%BF%D0%BE%D0%B1%D1%96%D1%87%D0%BD%D0%BE%D1%97%20%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8_files/css2_T6ES.css" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1B160E;
+    --bg-2:#242018;
+    --panel:#2C2618;
+    --straw:#D9A430;
+    --straw-bright:#F0BE4C;
+    --husk:#7C8A4A;
+    --cream:#F3ECDB;
+    --cream-dim:#C9BFA6;
+    --line:rgba(243,236,219,0.14);
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Manrope', sans-serif;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+  }
+  :root:not([data-theme="light"]){ }
+  :root[data-theme="light"]{
+    --bg:#F3ECDB;
+    --bg-2:#EAE1C9;
+    --panel:#FFFBF0;
+    --straw:#A9701B;
+    --straw-bright:#8C5A12;
+    --husk:#5A6B34;
+    --cream:#241F14;
+    --cream-dim:#4B4331;
+    --line:rgba(36,31,20,0.14);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#F3ECDB;
+      --bg-2:#EAE1C9;
+      --panel:#FFFBF0;
+      --straw:#A9701B;
+      --straw-bright:#8C5A12;
+      --husk:#5A6B34;
+      --cream:#241F14;
+      --cream-dim:#4B4331;
+      --line:rgba(36,31,20,0.14);
+    }
+  }
+  html{ scroll-padding-top: env(safe-area-inset-top,0px); scroll-behavior:smooth; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; background:var(--bg); color:var(--cream); font-family:var(--font-body); overflow-x:hidden; }
+  body{ min-height:100%; }
+  img,svg{ max-width:100%; }
+  a{ color:inherit; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; }
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:50;
+    padding-top: env(safe-area-inset-top,0px);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:18px 28px; max-width:1120px; margin:0 auto; }
+  .logo{ font-family:var(--font-display); font-size:1.4rem; font-weight:600; letter-spacing:0.01em; display:flex; align-items:center; gap:10px;}
+  .logo .dot{ width:9px;height:9px;border-radius:50%; background:var(--straw-bright); display:inline-block; }
+  .navlinks{ display:flex; gap:32px; font-size:0.95rem; font-weight:500; }
+  .navlinks a{ text-decoration:none; color:var(--cream-dim); transition:color .2s; }
+  .navlinks a:hover{ color:var(--straw-bright); }
+  .nav-cta{ font-size:0.9rem; font-weight:700; padding:10px 18px; border-radius:3px; background:var(--straw); color:#1B160E; text-decoration:none; white-space:nowrap; }
+  .burger{ display:none; background:none; border:none; color:var(--cream); font-size:1.6rem; cursor:pointer; }
+  @media (max-width:760px){
+    .navlinks{ display:none; }
+    .nav-cta{ display:none; }
+    .burger{ display:block; }
+  }
+
+  /* Hero */
+  .hero{ padding:86px 0 70px; position:relative; }
+  .hero-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center; }
+  @media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; } }
+  .eyebrow{ color:var(--husk); font-weight:700; font-size:0.95rem; margin:0 0 14px; }
+  h1{ font-family:var(--font-display); font-size:clamp(2.4rem,5vw,3.6rem); line-height:1.06; font-weight:600; margin:0 0 22px; letter-spacing:-0.01em; }
+  .hero p.lead{ font-size:1.13rem; line-height:1.6; color:var(--cream-dim); max-width:46ch; margin:0 0 30px; }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{ display:inline-block; padding:14px 26px; border-radius:3px; font-weight:700; text-decoration:none; font-size:0.98rem; }
+  .btn-primary{ background:var(--straw); color:#1B160E; }
+  .btn-ghost{ border:1px solid var(--line); color:var(--cream); }
+
+  .pellet-visual{ position:relative; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; }
+  .pellet-stat{
+    position:absolute; background:var(--panel); border:1px solid var(--line); border-radius:6px;
+    padding:14px 18px; font-family:var(--font-display);
+  }
+  .pellet-stat .num{ font-size:1.7rem; font-weight:700; color:var(--straw-bright); line-height:1; }
+  .pellet-stat .label{ font-family:var(--font-body); font-size:0.75rem; color:var(--cream-dim); margin-top:4px; }
+  .pellet-stat.a{ top:6%; left:0; }
+  .pellet-stat.b{ bottom:10%; right:2%; }
+
+  /* Cluster of pellet circles built from CSS */
+  .cluster{ position:relative; width:78%; height:78%; }
+  .peg{ position:absolute; border-radius:9px; background:linear-gradient(155deg,var(--straw-bright),var(--straw) 60%,#8a5f18); box-shadow: inset -4px -6px 8px rgba(0,0,0,.35), inset 3px 3px 5px rgba(255,255,255,.25); }
+
+  /* Stats bar */
+  .statsbar{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:34px 0; }
+  .statsbar .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; }
+  .stat{ min-width:140px; }
+  .stat .n{ font-family:var(--font-display); font-size:2rem; font-weight:600; color:var(--straw-bright); }
+  .stat .l{ font-size:0.86rem; color:var(--cream-dim); margin-top:4px; }
+
+  section{ padding:84px 0; }
+  h2{ font-family:var(--font-display); font-size:clamp(1.7rem,3.4vw,2.3rem); font-weight:600; margin:0 0 12px; letter-spacing:-0.01em; }
+  .section-intro{ color:var(--cream-dim); max-width:56ch; line-height:1.6; margin:0 0 48px; }
+
+  /* Products */
+  .products{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  @media (max-width:760px){ .products{ grid-template-columns:1fr; } }
+  .product{ background:var(--bg); padding:34px 28px; }
+  .product h3{ font-family:var(--font-display); font-size:1.3rem; font-weight:600; margin:0 0 8px; }
+  .product .tag{ font-size:0.82rem; color:var(--husk); font-weight:700; margin-bottom:16px; }
+  .product p{ color:var(--cream-dim); font-size:0.94rem; line-height:1.55; margin:0 0 18px; }
+  .spec-list{ list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+  .spec-list li{ display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--line); font-size:0.86rem; }
+  .spec-list li span:last-child{ color:var(--straw-bright); font-weight:700; }
+
+  /* Process */
+  .process{ background:var(--bg-2); }
+  .steps{ display:flex; gap:0; overflow-x:auto; margin:0 -28px; padding:0 28px 8px; scrollbar-width:thin; }
+  .step{ flex:0 0 220px; padding:22px 22px 0 0; position:relative; }
+  .step .idx{ font-family:var(--font-display); font-size:2.4rem; color:var(--straw); font-weight:600; opacity:.55; }
+  .step h4{ font-size:1.02rem; margin:8px 0 8px; font-weight:700; }
+  .step p{ font-size:0.87rem; color:var(--cream-dim); line-height:1.5; margin:0; }
+  .step:not(:last-child)::after{ content:""; position:absolute; top:32px; right:0; width:22px; height:1px; background:var(--line); }
+
+  /* Advantages */
+  .adv-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:2px; }
+  @media (max-width:700px){ .adv-grid{ grid-template-columns:1fr; } }
+  .adv{ padding:26px 0; border-bottom:1px solid var(--line); }
+  .adv h4{ font-size:1.05rem; font-weight:700; margin:0 0 8px; display:flex; align-items:center; gap:10px; }
+  .adv h4::before{ content:""; width:8px; height:8px; background:var(--husk); border-radius:1px; flex:none; }
+  .adv p{ color:var(--cream-dim); font-size:0.92rem; line-height:1.55; margin:0; padding-left:18px; }
+
+  /* Contact */
+  .contact{ background:var(--panel); border-radius:8px; padding:52px; display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+  @media (max-width:760px){ .contact{ grid-template-columns:1fr; padding:32px 24px; } }
+  .contact-info p{ color:var(--cream-dim); line-height:1.6; }
+  .contact-info .row{ margin-bottom:18px; }
+  .contact-info .row .k{ font-size:0.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--husk); font-weight:700; margin-bottom:4px; }
+  .contact-info .row .v{ font-size:1.02rem; }
+  form{ display:flex; flex-direction:column; gap:14px; }
+  input, textarea{
+    background:var(--bg); border:1px solid var(--line); color:var(--cream); padding:13px 14px; border-radius:4px; font-family:var(--font-body); font-size:0.95rem; width:100%;
+  }
+  input:focus, textarea:focus{ outline:2px solid var(--straw-bright); outline-offset:1px; }
+  textarea{ resize:vertical; min-height:90px; }
+  form .btn-primary{ border:none; cursor:pointer; font-family:var(--font-body); margin-top:6px; }
+  .form-note{ font-size:0.8rem; color:var(--cream-dim); margin-top:-4px; }
+
+  footer{ border-top:1px solid var(--line); padding:40px 0; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  footer .f-logo{ font-family:var(--font-display); font-weight:600; font-size:1.1rem; }
+  footer .f-links{ display:flex; gap:22px; font-size:0.86rem; color:var(--cream-dim); }
+  footer .f-links a{ text-decoration:none; }
+  footer .copy{ font-size:0.8rem; color:var(--cream-dim); }
+
+  :focus-visible{ outline:2px solid var(--straw-bright); outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo"><span class="dot"></span>Копиця</div>
+    <nav class="navlinks">
+      <a href="#products">Продукція</a>
+      <a href="#process">Виробництво</a>
+      <a href="#advantages">Переваги</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Замовити гранули</a>
+    <button class="burger" aria-label="Меню" onclick="document.querySelector('.navlinks').style.display='flex';document.querySelector('.navlinks').style.flexDirection='column';document.querySelector('.navlinks').style.position='absolute';document.querySelector('.navlinks').style.top='64px';document.querySelector('.navlinks').style.right='0';document.querySelector('.navlinks').style.background='var(--panel)';document.querySelector('.navlinks').style.padding='20px 28px';document.querySelector('.navlinks').style.border='1px solid var(--line)';">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Виробництво паливних гранул</p>
+      <h1>З лушпиння, соломи й тирси — у стабільне тепло на всю зиму</h1>
+      <p class="lead">Копиця переробляє побічну сировину українських господарств у пелети для котлів і камінів: вища теплота згоряння за дрова, менше золи, точна фасовка під ваш об'єм.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Замовити гранули</a>
+        <a class="btn btn-ghost" href="#products">Перейти до продукції</a>
+      </div>
+    </div>
+    <div class="pellet-visual">
+      <div class="cluster" id="cluster"><div class="peg" style="left: 30%; top: 20%; width: 54%; height: 20%; transform: rotate(8deg);"></div><div class="peg" style="left: 8%; top: 50%; width: 48%; height: 18%; transform: rotate(-6deg);"></div><div class="peg" style="left: 58%; top: 44%; width: 46%; height: 18%; transform: rotate(10deg);"></div><div class="peg" style="left: 20%; top: 78%; width: 50%; height: 18%; transform: rotate(-3deg);"></div><div class="peg" style="left: 64%; top: 78%; width: 44%; height: 17%; transform: rotate(8deg);"></div><div class="peg" style="left: 45%; top: 4%; width: 40%; height: 16%; transform: rotate(-10deg);"></div></div>
+      <div class="pellet-stat a"><div class="num">4 300</div><div class="label">ккал/кг, лушпиння соняшника</div></div>
+      <div class="pellet-stat b"><div class="num">≤ 1,2%</div><div class="label">зольність</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="statsbar">
+  <div class="wrap">
+    <div class="stat"><div class="n">18 000 т</div><div class="l">гранул на рік</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">види сировини в обробці</div></div>
+    <div class="stat"><div class="n">24</div><div class="l">області з постачанням</div></div>
+    <div class="stat"><div class="n">6–8 мм</div><div class="l">діаметр гранули</div></div>
+  </div>
+</div>
+
+<section id="products">
+  <div class="wrap">
+    <h2>Продукція</h2>
+    <p class="section-intro">Чотири лінійки пелет — під різні типи котлів і бюджет. Кожна партія проходить контроль вологості та зольності перед фасуванням.</p>
+  </div>
+  <div class="products">
+    <div class="product">
+      <div class="tag">Найпопулярніше</div>
+      <h3>Пелети з лушпиння соняшника</h3>
+      <p>Висока теплотворність, щільна гранула, мінімум пилу. Оптимальні для побутових і промислових котлів.</p>
+      <ul class="spec-list">
+        <li><span>Теплота згоряння</span><span>4 200–4 400 ккал/кг</span></li>
+        <li><span>Вологість</span><span>≤ 10%</span></li>
+        <li><span>Зольність</span><span>≤ 1,2%</span></li>
+        <li><span>Фасування</span><span>15 / 25 кг, біг-бег</span></li>
+      </ul>
+    </div>
+    <div class="product">
+      <div class="tag">Бюджетний варіант</div>
+      <h3>Соломʼяні пелети</h3>
+      <p>Сировина з пшеничної та ріпакової соломи. Підходять для великих господарств і котелень з відповідним обладнанням.</p>
+      <ul class="spec-list">
+        <li><span>Теплота згоряння</span><span>3 700–3 900 ккал/кг</span></li>
+        <li><span>Вологість</span><span>≤ 12%</span></li>
+        <li><span>Зольність</span><span>≤ 4%</span></li>
+        <li><span>Фасування</span><span>25 кг, біг-бег, насипом</span></li>
+      </ul>
+    </div>
+    <div class="product">
+      <div class="tag">Для камінів</div>
+      <h3>Деревні пелети (сосна/дуб)</h3>
+      <p>Світла гранула з низькою зольністю. Чисте горіння, підходить для камінів і котлів з автоподачею.</p>
+      <ul class="spec-list">
+        <li><span>Теплота згоряння</span><span>4 600–4 800 ккал/кг</span></li>
+        <li><span>Вологість</span><span>≤ 8%</span></li>
+        <li><span>Зольність</span><span>≤ 0,7%</span></li>
+        <li><span>Фасування</span><span>15 кг, палета 975 кг</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="wrap">
+    <h2>Як сировина стає паливом</h2>
+    <p class="section-intro">Повний цикл — від приймання відходів господарства до готової партії на палеті. Шість етапів, кожен під контролем вологості та фракції.</p>
+    <div class="steps">
+      <div class="step"><div class="idx">01</div><h4>Приймання сировини</h4><p>Лушпиння, солома чи тирса надходять з господарств і зважуються на вхідному контролі.</p></div>
+      <div class="step"><div class="idx">02</div><h4>Подрібнення</h4><p>Молоткова дробарка доводить сировину до однорідної фракції 4–8 мм.</p></div>
+      <div class="step"><div class="idx">03</div><h4>Сушіння</h4><p>Барабанна сушарка знижує вологість маси до 10–12% перед пресуванням.</p></div>
+      <div class="step"><div class="idx">04</div><h4>Пресування</h4><p>Гранулятор під тиском формує щільну гранулу без хімічних звʼязувачів.</p></div>
+      <div class="step"><div class="idx">05</div><h4>Охолодження</h4><p>Гранула охолоджується до кімнатної температури, щоб зберегти форму при перевезенні.</p></div>
+      <div class="step"><div class="idx">06</div><h4>Фасування</h4><p>Пакування в мішки 15–25 кг або біг-беги, палетування та відвантаження.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="advantages">
+  <div class="wrap">
+    <h2>Чому агропелети</h2>
+    <p class="section-intro">Порівняно з дровами й вугіллям, гранули з побічної сировини дають передбачуваний цикл опалення й менше клопоту з паливом.</p>
+    <div class="adv-grid">
+      <div class="adv"><h4>Стабільне горіння</h4><p>Однакова вологість і фракція в кожній партії — котел працює без різких стрибків потужності.</p></div>
+      <div class="adv"><h4>Менше золи й чистки</h4><p>Зольність 0,7–4% залежно від сировини означає рідше чистити котел і менше відходів.</p></div>
+      <div class="adv"><h4>Компактне зберігання</h4><p>Мішки й біг-беги займають у 3–4 рази менше місця, ніж такий самий запас дров.</p></div>
+      <div class="adv"><h4>Друге життя відходів</h4><p>Лушпиння й солома, які раніше спалювали в полі, перетворюються на паливо для теплиць, ферм і будинків.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div class="contact-info">
+        <h2>Замовити партію</h2>
+        <p style="margin-top:-8px;margin-bottom:26px;">Залиште заявку — підберемо тип пелет під ваш котел і розрахуємо доставку.</p>
+        <div class="row"><div class="k">Телефон</div><div class="v">+380 44 000 00 00</div></div>
+        <div class="row"><div class="k">Пошта</div><div class="v">zamovlennya@kopytsya.ua</div></div>
+        <div class="row"><div class="k">Виробництво</div><div class="v">Полтавська обл., смт Диканька</div></div>
+        <div class="row"><div class="k">Мінімальне замовлення</div><div class="v">1 палета (975–1000 кг)</div></div>
+      </div>
+      <form onsubmit="event.preventDefault(); this.querySelector('.form-note').textContent='Дякуємо! Заявку надіслано, ми зателефонуємо протягом дня.'; this.querySelector('.form-note').style.color='var(--straw-bright)';">
+        <input type="text" placeholder="Ім'я" required="">
+        <input type="tel" placeholder="Телефон" required="">
+        <select style="background:var(--bg);border:1px solid var(--line);color:var(--cream);padding:13px 14px;border-radius:4px;font-family:var(--font-body);font-size:0.95rem;">
+          <option selected="selected">Пелети з лушпиння соняшника</option>
+          <option>Соломʼяні пелети</option>
+          <option>Деревні пелети</option>
+          <option>Ще не визначився(лась)</option>
+        </select>
+        <textarea placeholder="Орієнтовний обсяг, місто доставки"></textarea>
+        <button class="btn btn-primary" type="submit">Надіслати заявку</button>
+        <p class="form-note">Відповідаємо протягом робочого дня.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-logo">Копиця</div>
+    <div class="f-links">
+      <a href="#products">Продукція</a>
+      <a href="#process">Виробництво</a>
+      <a href="#advantages">Переваги</a>
+      <a href="#contact">Контакти</a>
+    </div>
+    <div class="copy">© 2026 Копиця. Виробництво агропелет.</div>
+  </div>
+</footer>
+
+<script>
+  // Build a small cluster of pellet "pegs" as a hero visual
+  (function(){
+    const c = document.getElementById('cluster');
+    const positions = [
+      [30,20,54,20,8],[8,50,48,18,-6],[58,44,46,18,10],
+      [20,78,50,18,-3],[64,78,44,17,8],[45,4,40,16,-10]
+    ];
+    positions.forEach(([x,y,w,h,r])=>{
+      const d = document.createElement('div');
+      d.className='peg';
+      d.style.left=x+'%'; d.style.top=y+'%'; d.style.width=w+'%'; d.style.height=h+'%';
+      d.style.transform='rotate('+r+'deg)';
+      c.appendChild(d);
+    });
+  })();
+</script>
+
+
+
+</body></html>
